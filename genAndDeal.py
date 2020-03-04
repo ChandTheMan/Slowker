@@ -28,5 +28,25 @@ def dealP1(cardPack, playerCount):
             playerHands[player][i] = cardPack.pop()
     return playerHands, cardPack
 
+def dealFlop(cardPack):
+    board = []
+    for i in range(3):
+        cardPack.pop()
+        board.append(cardPack.pop())
+    return board, cardPack
+
+def dealTurn(board, cardPack):
+    cardPack.pop()
+    board.append(cardPack.pop())
+    return board, cardPack
+
+def dealRiver(board, cardPack):
+    cardPack.pop()
+    board.append(cardPack.pop())
+    return board, cardPack
+    
 def genAndDeal(playerCount):
-    cardPack = 
+
+    cardPack = shuffleCardPack(genCardPack())
+    playerHands, cardPack = dealP1(cardPack, playerCount)
+    return playerHands, cardPack
