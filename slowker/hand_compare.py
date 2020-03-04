@@ -1,19 +1,21 @@
-from handCalculate import handCalculate
+from hand_calculate import hand_calculate
 
-def handCompare(playerHands, board): #INCOMPLETE
-    handValues = []
-    for i in range(len(playerHands)):
-        handValues.append(handCalculate(playerHands[i], board))
-    handCount = [0,0,0,0,0,0,0,0]
-    print(handValues)
-    for i in range(len(handValues)):
+
+def hand_compare(player_hands, board):  # INCOMPLETE
+    """I'm not sure what's happening here."""
+    hand_values = []
+    for i in range(len(player_hands)):
+        hand_values.append(hand_calculate(player_hands[i], board))
+    hand_count = [0, 0, 0, 0, 0, 0, 0, 0]
+    print(hand_values)
+    for i in range(len(hand_values)):
         
-        handCount[handValues[i][2]-1] += 1
-    print(handCount)
+        hand_count[hand_values[i][2]-1] += 1
+    print(hand_count)
     return
     
 
-#Hierachy of hands to compare
+# Hierachy of hands to compare
 '''
 highCardCheck
 pair(s)Check
@@ -26,8 +28,8 @@ straightFlushCheck
   
 '''
 
-#Michaels Code -need to comb through this and intergrate possiby-
-    '''
+# Michaels Code -need to comb through this and intergrate possiby-
+"""
 cardHierarchy = ["2", "3", "4", "5", "6", "7", "8", "9", "X", "J", "Q", "K", "A"]
 handHierarchy = ["highcard", "pair", "twopair", "trips", "straight", "flush", "fullhouse", "straightflush", "royalflush"]
 def rankPlayerHands(hands):
@@ -90,4 +92,4 @@ exampleHands = [
 ]
 rankPlayerHands(exampleHands)
 
-'''
+"""
