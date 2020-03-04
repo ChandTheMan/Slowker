@@ -12,18 +12,20 @@ def handCompare(playerHands, board): #INCOMPLETE
     print(handCount)
     return
     
-    '''
-    highCardCheck
-    pair(s)Check
-    tripsCheck
-    straightCheck
-    flushCheck
-    fullHouseCheck
-    fourOfAKindCheck
-    straightFlushCheck
-    
-    '''
-    
+
+#Hierachy of hands to compare
+'''
+highCardCheck
+pair(s)Check
+tripsCheck
+straightCheck
+flushCheck
+fullHouseCheck
+fourOfAKindCheck
+straightFlushCheck
+  
+'''
+
 #Michaels Code -need to comb through this and intergrate possiby-
     '''
 cardHierarchy = ["2", "3", "4", "5", "6", "7", "8", "9", "X", "J", "Q", "K", "A"]
