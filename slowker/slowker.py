@@ -1,20 +1,28 @@
 # from slack import WebClient
 
-import gen_and_deal
-import hand_compare
+from gen_and_deal import game
+from gen_and_deal import player
 
+player_1 = player("Corey", 500)
+player_2 = player("Algy", 420)
 
-def main(player_count):
+def main():
     """Slowker is slow poker!"""
-    player_hands, card_pack = gen_and_deal.gen_and_deal(player_count)
-    board, card_pack = gen_and_deal.deal_flop(card_pack)
-    board, card_pack = gen_and_deal.deal_turn(board, card_pack)
-    board, card_pack = gen_and_deal.deal_river(board, card_pack)
-    print(board)
-    hand_compare.hand_compare(player_hands, board)
+    gamey = game()
+    gamey.add_player(player_1) #Temp solution to add players
+    gamey.add_player(player_2)
+    gamey.gen_card_pack()
+    gamey.shuffle_card_pack()
+    gamey.form_player_hands()
+    gamey.deal_flop()
+    gamey.deal_turn()
+    gamey.deal_river()
+    print(gamey.player_list[0].hand)
+    #hand_compare.hand_compare(player_hands, board)
+
     return
 
-
-if __name__ == "__main__":
+main()
+#if __name__ == "__main__":
     # Main function call to run
-    main(player_count=8)
+    #main(player_count=8)
