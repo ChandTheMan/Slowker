@@ -1,5 +1,7 @@
 from hand_calculate import hand_calculate
 
+### Completely all over the place ###
+
 
 def hand_compare(player_hands, board):  # INCOMPLETE
     """I'm not sure what's happening here."""

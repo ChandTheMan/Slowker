@@ -1,4 +1,5 @@
 import checks
+###Re think name for this file ###
 
 def hand_compute(hand):
     """Find combinations present in a given hand when referencing the current board.."""
@@ -14,4 +15,4 @@ def hand_compute(hand):
     container = checks.pair_check(hand)
     if container:
         return container, 'pair', 2
-    return checks.high_card_check(hand, 'highcard')
+    return checks.high_card_check(hand, 'highcard')     #This may be broken... is returning just one value... maybe...

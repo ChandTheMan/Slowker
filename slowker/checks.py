@@ -1,24 +1,3 @@
-"""Deck/Hand based checks to perform."""
-'''
-
-def face_card_convert(card):
-    """Convert from a deck card A->K into it's numerical representation."""
-    try:
-        return int(card)
-    except ValueError:
-        if card == 'A':
-            return 1
-        elif card == 'X':
-            return 10
-        elif card == 'J':
-            return 11
-        elif card == 'Q':
-            return 12
-        elif card == 'K':
-            return 13
-
-'''
-
 def high_card_check(hand, suit_to_check: str):
     """Get the highest card in a given hand.
 

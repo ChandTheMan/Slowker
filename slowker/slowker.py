@@ -1,27 +1,28 @@
 # from slack import WebClient
-from gen_and_deal import game
-from gen_and_deal import card_pack
-from gen_and_deal import player
-from gen_and_deal import card
 
 
-player_1 = player("Corey", 500)
+from player import player
+from poker_game import poker_game
+
+player_1 = player("Corey", 500) #Create player, with name, bankroll
 player_2 = player("Algy", 420)
 
 
 def main():
     """Slowker is slow poker!"""
-    gamey = game()
-    gamey.add_player(player_1) #Temp solution to add players
-    gamey.add_player(player_2)
-    gamey.form_player_hands()
-    gamey.deal_flop()
-    gamey.deal_turn()
-    gamey.deal_river()
-    gamey.update_all_hands()
-    print(gamey.player_list[1].hand_value)
-    #hand_compare.hand_compare(player_hands, board)
-
+    game = poker_game()
+    game.add_player(player_1)   #Temp solution to add players to game
+    game.add_player(player_2)
+    game.form_player_hands()    #Deal phase one, creating card objects and card_pack  
+    game.update_all_hands()     #Used after each round, to sort hand + calculate each persons strongest hand
+    game.deal_flop()
+    game.update_all_hands()
+    game.deal_turn()
+    game.update_all_hands()
+    game.deal_river()
+    game.update_all_hands()
+    print(game.player_list[1].hand_value)   #Prints hand_value of player at index 1
+    #hand_compare.hand_compare(player_hands, board) --Incomplete
     return
 
 main()
