@@ -1,8 +1,10 @@
 from card_pack import card_pack
-
+from bet_round import bet_round
 
 class poker_game:
-    def __init__(self):
+    def __init__(self, bb):
+        self.bb_index = 0
+        self.bb = bb
         self.player_list = []
         self.board = []
         return
@@ -40,3 +42,13 @@ class poker_game:
         self.card_pack.pop()
         self.board.append(self.card_pack.pop())
         return
+
+    def first_bet(self):
+        a = bet_round(self)
+        a.bet_first_round()
+        return
+'''
+    def standard_bet_round(self):
+        a.standard_bet()
+        return
+'''
