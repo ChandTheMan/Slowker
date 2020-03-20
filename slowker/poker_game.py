@@ -47,7 +47,8 @@ class poker_game:
         a = bet_round(self)
         a.bet_first_round()
         return
-
+'''
     def standard_bet_round(self):
         a.standard_bet()
         return
+'''
